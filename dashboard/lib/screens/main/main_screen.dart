@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../dashbord/dashboard_screen.dart';
 import 'components/side_menu.dart';
 
 class MainScreen extends StatelessWidget {
@@ -7,6 +8,7 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start, // header to top
           children: [
             Expanded(
               // default flex = 1
@@ -16,9 +18,7 @@ class MainScreen extends StatelessWidget {
             Expanded(
               // it takes 5/6 part of the screen
               flex: 5,
-              child: Container(
-                color: Colors.blue,
-              ),
+              child: DashboardScreen(),
             ),
           ],
         ),
