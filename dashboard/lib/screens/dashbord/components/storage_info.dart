@@ -22,7 +22,7 @@ class StorageInfoCard extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           width: 2,
-          color: primaryColor.withOpacity(0.15),
+          color: darkPrimaryColor.withOpacity(0.15),
         ),
         borderRadius: const BorderRadius.all(
           Radius.circular(defaultPadding),
