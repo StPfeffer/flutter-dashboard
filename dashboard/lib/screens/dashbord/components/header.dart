@@ -29,10 +29,75 @@ class Header extends StatelessWidget {
             flex: Responsive.isDesktop(context) ? 2 : 1,
           ),
         Expanded(
+          child: ThemeSwitch(),
+        ),
+        SizedBox(
+          width: defaultPadding,
+        ),
+        Expanded(
           child: SearchField(),
         ),
         ProfileCard()
       ],
+    );
+  }
+}
+
+class ThemeSwitch extends StatefulWidget {
+  const ThemeSwitch({Key? key}) : super(key: key);
+
+  @override
+  State<ThemeSwitch> createState() => _ThemeSwitchState();
+}
+
+class _ThemeSwitchState extends State<ThemeSwitch> {
+  bool isSwitched = true;
+
+  void toggleSwitch(bool value) {
+    if (!isSwitched) {
+      setState(() {
+        isSwitched = true;
+      });
+    } else {
+      setState(() {
+        isSwitched = false;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.symmetric(
+        vertical: defaultPadding / 2,
+      ),
+      decoration: BoxDecoration(
+        color: darkSecondaryColor,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(Icons.dark_mode_outlined),
+          SizedBox(
+            width: defaultPadding / 2,
+          ),
+          Text("Dark Mode"),
+          Transform.scale(
+            scale: 1,
+            child: Switch(
+              value: isSwitched,
+              onChanged: toggleSwitch,
+              activeColor: darkPrimaryColor,
+              activeTrackColor: darkBgColor,
+              inactiveThumbColor: Colors.redAccent,
+              inactiveTrackColor: darkBgColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
