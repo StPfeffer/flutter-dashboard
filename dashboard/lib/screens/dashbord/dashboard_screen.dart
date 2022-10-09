@@ -1,7 +1,9 @@
 import 'package:dashboard/constants.dart';
+import 'package:dashboard/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'components/header.dart';
+import 'components/my_files.dart';
+import 'components/recent_files.dart';
 import 'components/storage_details.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -23,30 +25,28 @@ class DashboardScreen extends StatelessWidget {
                   flex: 5,
                   child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            "My Files",
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          ElevatedButton.icon(
-                            onPressed: () {},
-                            icon:
-                                SvgPicture.asset("assets/icons/Documents.svg"),
-                            label: ,
-                          ),
-                        ],
+                      MyFiles(),
+                      SizedBox(
+                        height: defaultPadding,
                       ),
+                      RecentFiles(context),
+                      if (Responsive.isMobile(context))
+                        SizedBox(
+                          height: defaultPadding,
+                        ),
+                      if (Responsive.isMobile(context)) StorageDetails(),
                     ],
                   ),
                 ),
-                SizedBox(
-                  width: defaultPadding,
-                ),
-                Expanded(
-                  flex: 2,
-                  child: StorageDetails(),
-                ),
+                if (!Responsive.isMobile(context))
+                  SizedBox(
+                    width: defaultPadding,
+                  ),
+                if (!Responsive.isMobile(context))
+                  Expanded(
+                    flex: 2,
+                    child: StorageDetails(),
+                  ),
               ],
             )
           ],
