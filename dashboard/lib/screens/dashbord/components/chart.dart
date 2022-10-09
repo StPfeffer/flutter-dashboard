@@ -48,7 +48,7 @@ class Chart extends StatelessWidget {
 
 List<PieChartSectionData> pieChartSelectionDatas = [
   PieChartSectionData(
-    color: primaryColor,
+    color: darkPrimaryColor,
     value: 25,
     showTitle: false,
     radius: 25,
@@ -72,7 +72,7 @@ List<PieChartSectionData> pieChartSelectionDatas = [
     radius: 16,
   ),
   PieChartSectionData(
-    color: primaryColor.withOpacity(0.1),
+    color: darkPrimaryColor.withOpacity(0.1),
     value: 25,
     showTitle: false,
     radius: 13,
