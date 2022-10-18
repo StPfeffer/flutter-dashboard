@@ -10,4 +10,4 @@
 
 **Fontes:**
 
-- Poppins [link](https://fonts.google.com/specimen/Poppins)
+- Poppins: [link](https://fonts.google.com/specimen/Poppins)
