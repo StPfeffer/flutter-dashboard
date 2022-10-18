@@ -70,7 +70,7 @@ class ProfileCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: defaultPadding / 2,
               ),
-              child: Text("Nome Sobrenome"),
+              child: Text("Mateus Pfeffer"),
             ),
           Icon(Icons.keyboard_arrow_down),
         ],
