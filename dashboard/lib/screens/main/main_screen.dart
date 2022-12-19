@@ -13,7 +13,7 @@ class MainScreen extends StatelessWidget {
       drawer: SideMenu(),
       body: SafeArea(
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start, // header to top
+          crossAxisAlignment: CrossAxisAlignment.start, // header fixed to top
           children: [
             // Side menu only for large screens
             if (Responsive.isDesktop(context))
